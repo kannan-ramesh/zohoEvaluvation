@@ -3,7 +3,7 @@ package com.kannanrameshrk;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Pattern2 {
+public class PatternZigzag {
 
 	public static void main(String[] args) {
 		//ZOHOISHIRING
