@@ -7,6 +7,7 @@ public class Pattern1 {
 
 	public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the number:");
         int n =sc.nextInt();
         
         int[][] arr = new int[n][n];
@@ -22,7 +23,7 @@ public class Pattern1 {
         	//print top to bottom
             for(int i=top;i<=bottom;i++){
                 arr[i][left]=number++;
-                System.out.print(i+","+left+"-");
+                //System.out.print(i+","+left+"-");
             
             }
             
@@ -30,7 +31,7 @@ public class Pattern1 {
             //print bottom to top cross
             for(int i=bottom;i>=top;i--){
                 arr[i][right]=number++;
-                System.out.println(i+","+right);
+               // System.out.println(i+","+right);
         
             }
             right--;
