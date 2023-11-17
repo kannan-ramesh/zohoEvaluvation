@@ -22,9 +22,9 @@ public class PatternZigzag {
 	private static void zigzagPattern(String str, int n) {
 		int row = 0, col = 0;
 		boolean flag = true;
-		int len = str.length();
+		int len = str.length()/2+1;
 		
-		char[][] arr = new char[4][len];
+		char[][] arr = new char[n][len];
 		
 		for (int i = 0; i < str.length(); i++) {
 			arr[row][col] = str.charAt(i);
