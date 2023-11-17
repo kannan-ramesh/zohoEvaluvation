@@ -21,8 +21,11 @@ public class lexicographically {
 		lexicoString(arr);
 		
 		System.out.println("Output");
-		for(int i=0;i<arr.length; i++) {
-			System.out.println("String"+ (i+1) +":" + arr[i].toString());
+		Arrays.sort(arr);
+		//print String
+		int j=0;
+		for(int i=arr.length-1;i>=0; i--) {
+			System.out.println("String"+ (j+1) +":" + arr[i].toString());
 		}
 		
 
@@ -39,24 +42,18 @@ public class lexicographically {
 	}
 
 	private static String sorting(String str) {
-
+		//string store in character array
 		 char[] charArray = str.toCharArray();
-
+		 //sorting element
 		    for (int i = 0; i < charArray.length; i++) {
 		        for (int j = i + 1; j < charArray.length; j++) {
 		            if (charArray[i] < charArray[j]) {
-		               
 		                char temp = charArray[j];
 		                charArray[j] = charArray[i];
 		                charArray[i] = temp;
 		            }
 		        }
 		    }
-		    
-		    
-		    
 		   return  new String(charArray);
-		
 	}
-
 }
