@@ -1,6 +1,5 @@
 package com.kannanrameshrk;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class lexicographically {
@@ -21,11 +20,22 @@ public class lexicographically {
 		lexicoString(arr);
 		
 		System.out.println("Output");
-		Arrays.sort(arr);
+		//sort array element length wise
+		
+		for(int i=0; i<arr.length; i++) {
+			for(int j=i+1;j<arr.length; j++) {
+				if(arr[i].length() < arr[j].length()) {
+					String temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		//Arrays.sort(arr);
 		//print String
-		int j=0;
-		for(int i=arr.length-1;i>=0; i--) {
-			System.out.println("String"+ (j+1) +":" + arr[i].toString());
+		//int j=0;
+		for(int i=0;i<arr.length; i++) {
+			System.out.println("String"+ (i+1) +":" + arr[i].toString());
 		}
 		
 
@@ -37,8 +47,6 @@ public class lexicographically {
 			arr[i] = sorting(arr[i]);
 			//System.out.println("hi"+ arr[i]);
 		}
-		
-		
 	}
 
 	private static String sorting(String str) {
@@ -47,11 +55,13 @@ public class lexicographically {
 		 //sorting element
 		    for (int i = 0; i < charArray.length; i++) {
 		        for (int j = i + 1; j < charArray.length; j++) {
-		            if (charArray[i] < charArray[j]) {
-		                char temp = charArray[j];
-		                charArray[j] = charArray[i];
-		                charArray[i] = temp;
-		            }
+		        	//System.out.println(charArray[i]);
+		        	System.out.println(Character.toUpperCase(charArray[i]));
+		        	  if (Character.toUpperCase(charArray[i]) <= Character.toUpperCase(charArray[j])) {
+		                      char temp = charArray[j];
+		                      charArray[j] = charArray[i];
+		                      charArray[i] = temp;
+		                  }
 		        }
 		    }
 		   return  new String(charArray);
